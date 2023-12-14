@@ -86,7 +86,7 @@ function Main():JSX.Element{
     <FormProvider {...methods}>
       {state.show&&
         <Result
-         res={!state.success}
+         res={state.success}
          close={close}
          />}
        <form className={styles.wrap}
