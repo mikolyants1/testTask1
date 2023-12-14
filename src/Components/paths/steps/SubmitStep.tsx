@@ -1,12 +1,8 @@
 import { memo } from "react"
 import styles from '../../style/step.module.css'
-import { Evt } from "../../types/type";
+import { props1 } from "../../types/type";
 
-interface props {
-    state:string,
-    change:(e:Evt<HTMLTextAreaElement>)=>void
-}
-function SubmitStep({state,change}:props):JSX.Element{
+function SubmitStep({state,change}:props1):JSX.Element{
  const count:number = state.replace(/ /g,"").length;
     return (
         <div className={styles.wrap}>

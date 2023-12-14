@@ -1,17 +1,24 @@
-import { useCallback,useState,createContext,useReducer ,Suspense, useMemo} from "react"
+import { useCallback,useState,createContext,useReducer ,
+Suspense, useMemo, lazy, LazyExoticComponent, ComponentType} from "react"
 import styles from '../style/main.module.css'
 import ProgerssBar from "../ui/blocks/ProgerssBar";
 import { Navigate } from "react-router-dom";
 import Footer from "./Footer";
-import { Evt, context, next, prev, state,} from "../types/type";
+import { Evt, context, next, prev, props1, props2, state,} from "../types/type";
 import Loader from "../ui/Loader";
-import UserStep from "./steps/UserStep";
-import AboutStep from "./steps/AboutStep";
-import SubmitStep from "./steps/SubmitStep";
 import { getAdvant, getMail, getPhone, useAppSelector } from "../store/store";
 import { SubmitHandler,useForm,FormProvider } from "react-hook-form";
 import Result from "../ui/blocks/Result";
 import postData from "../helpers/get";
+
+const UserStep:LazyExoticComponent<
+ComponentType> = lazy(()=>import("./steps/UserStep"));
+
+const AboutStep:LazyExoticComponent<
+ComponentType<props2>> = lazy(()=>import("./steps/AboutStep"));
+
+const SubmitStep:LazyExoticComponent<
+ComponentType<props1>> = lazy(()=>import("./steps/SubmitStep"));
 
 export const Context = createContext<context>({
     step:0,nav:()=>{}

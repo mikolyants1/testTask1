@@ -1,15 +1,11 @@
 import { memo } from "react"
-import { Evt, state } from "../../types/type"
+import { Evt, props2, state } from "../../types/type"
 import styles from '../../style/step.module.css'
 import {useFormContext} from 'react-hook-form'
 import { getAdvant, useAction, useAppSelector } from "../../store/store";
 
-interface props {
- data:number[],
- check:(idx:number)=>(e:Evt<HTMLInputElement>)=>void,
-}
 
-function AboutStep({data,check}:props):JSX.Element{
+function AboutStep({data,check}:props2):JSX.Element{
  const {register} = useFormContext<state>();
  const advant:string[] = useAppSelector(getAdvant);
  const {chanItem,addItem,delItem} = useAction();

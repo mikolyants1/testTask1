@@ -37,6 +37,14 @@ export interface state {
       idx:number,
       text:string
   }
+  export interface props1 {
+   state:string,
+   change:(e:Evt<HTMLTextAreaElement>)=>void
+}
+export interface props2 {
+   data:number[],
+   check:(idx:number)=>(e:Evt<HTMLInputElement>)=>void,
+  }
 export type payload<T> = PayloadAction<T>;
 
  export type payload1 = PayloadAction<pay>;
