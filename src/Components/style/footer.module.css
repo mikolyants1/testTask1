@@ -1,0 +1,28 @@
+
+.wrap {
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(83, 147, 237);
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.prev {
+    width: 100px;
+    height: 40px;
+    color: rgb(83, 147, 237);
+    background-color: white;
+    border: 1px solid grey;
+    font-size: 16px;
+    border-radius: 5px;
+}

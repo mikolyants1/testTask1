@@ -1,0 +1,81 @@
+
+.wrap{
+    width: 700px;
+    margin: 20px auto;
+    right: 0;
+    left: 0;
+    z-index: 90;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px ;
+    position: absolute;
+}
+
+.progress {
+    width:90%;
+    display: flex;
+    border-radius: 10px;
+    height: 15px;
+    margin: 5px auto;
+    align-items: center;
+    position: relative;
+}
+
+.lineContainer {
+    display: flex;
+    position: absolute;
+    width: 98%;
+    margin:auto;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: 10px;
+}
+.pointContainer {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.line {
+  width: 50%;
+  background-color: rgb(240,240,240);
+}
+.point {
+    border-radius: 50%;
+    background-color: grey;
+    height: 100%;
+    width: 15px;
+}
+.numbers {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin:2px auto;
+}
+.lineDone {
+    width: 50%;
+    background-color: rgb(33, 128, 223);
+  }
+  .pointDone {
+      border-radius: 50%;
+      background-color: blue;
+      height: 100%;
+      width: 15px;
+  }
+
+  .num {
+    text-align: center;
+    width: 15px;
+    color:grey
+  }
+  
+  .numDone {
+    text-align: center;
+    width: 15px;
+    color: blue;
+  }
