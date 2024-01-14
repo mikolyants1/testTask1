@@ -9,9 +9,9 @@ const store = configureStore({
 
 type RootState = ReturnType<typeof store.getState>;
 
-type AppDispatch = typeof store.dispatch;
+type AppDispatch = () => typeof store.dispatch;
 
-export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppDispatch: AppDispatch = useDispatch;
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -19,7 +19,7 @@ export const getMail = (store:inintial) => store.mail;
 
 export const getPhone = (store:inintial) => store.phone;
 
-export const getAdvant = (store:inintial) => store.andavtages;
+export const getAdvant = (store:inintial) => store.advantages;
 
 export const useAction = () => {
   const dispatch = useAppDispatch();

@@ -6,14 +6,14 @@ export type action = ActionCreatorWithPayload<string>;
 export interface state {
     nickname:string,
     name:string,
-    sername:string,
+    surname:string,
     sex:string,
     radioGroup:string,
    }
  export interface data {
     nickname:string,
     name:string,
-    sername:string,
+    surname:string,
     sex:string,
     radioGroup:string,
     phone:string,
@@ -23,15 +23,15 @@ export interface state {
     about:string
  }
   export interface prev {
-      auth:boolean,
-      show:boolean,
-      success:boolean
+    auth:boolean,
+    show:boolean,
+    success:boolean
    }
 
  export interface inintial {
-      phone:string,
-      mail:string,
-      andavtages:string[]
+    phone:string,
+    mail:string,
+    advantages:string[]
   }
  export interface pay {
       idx:number,
@@ -45,6 +45,11 @@ export interface props2 {
    data:number[],
    check:(idx:number)=>(e:Evt<HTMLInputElement>)=>void,
   }
+export interface inputs {
+   title:string,
+   name:"name"|"nickname"|"radioGroup"|"surname"
+};
+
 export type payload<T> = PayloadAction<T>;
 
  export type payload1 = PayloadAction<pay>;

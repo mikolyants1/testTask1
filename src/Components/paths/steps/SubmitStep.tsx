@@ -16,10 +16,10 @@ function SubmitStep({state,change}:props1):JSX.Element{
             className={styles.about}
             maxLength={200}
              />
-             <div
-              className={styles.count}
-              children={count}
-              />
+          <div
+          className={styles.count}
+          children={count}
+           />
         </div>
     )
 }

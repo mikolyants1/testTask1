@@ -1,38 +1,24 @@
 import { memo } from "react"
 import styles from '../../style/step.module.css'
 import {useFormContext} from 'react-hook-form'
+import { inputs, state } from "../../types/type";
+import UserStepInput from "../../ui/inputs/UserStepInput";
 
 function UserStep():JSX.Element{
-    const {register} = useFormContext();
+const {register} = useFormContext<state>();
+const regist:inputs[] = [
+  {name:"nickname",title:"Никнейм"},
+  {name:"name",title:"Имя"},
+  {name:"surname",title:"Фамилия"},
+]
     return (
        <div className={styles.wrap}>
-         <div className={styles.title}>
-            Никнейм
-         </div>
-         <input
-          type="text"
-          className={styles.input}
-          placeholder="nickname"
-         {...register('nickname',{required:true})}
-           />
-        <div className={styles.title}>
-            Имя
-        </div>
-        <input
-         type="text"
-         className={styles.input}
-         placeholder="name"
-         {...register('name',{required:true})}
-         />
-        <div className={styles.title}>
-            Фамилия
-        </div>
-        <input
-         type="text"
-         className={styles.input}
-         placeholder="sername"
-         {...register('sername',{required:true})}
+        {regist.map(({name,title}:inputs):JSX.Element=>(
+          <UserStepInput
+            name={name}
+            title={title}
           />
+        ))}
         <div className={styles.title}>
             Пол
         </div>

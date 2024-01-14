@@ -1,7 +1,7 @@
 import { memo, useContext } from "react"
 import styles from '../../style/footer.module.css'
-import { Context } from "../../paths/Main"
 import { context } from "../../types/type";
+import Context from "../../helpers/Context";
 
 interface props {
     count:()=>void

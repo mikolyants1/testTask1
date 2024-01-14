@@ -4,7 +4,7 @@ import PrevButton from "../ui/buttons/PrevButton"
 import NextButton from "../ui/buttons/NextButton"
 
 interface props {
-    setCount:Dispatch<SetStateAction<number>>,
+  setCount:Dispatch<SetStateAction<number>>,
 }
 
 function Footer({setCount}:props):JSX.Element{

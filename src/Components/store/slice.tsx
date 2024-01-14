@@ -4,7 +4,7 @@ import { inintial,payload as action,payload1 as action1,pay } from "../types/typ
 const initialState:inintial = {
     phone:"+7()",
     mail:"",
-    andavtages:["","",""]
+    advantages:["","",""]
 };
 
 const userSlice = createSlice({
@@ -19,17 +19,16 @@ const userSlice = createSlice({
         },
      chanItem:(state:inintial,action:action1):void => {
         const {idx,text}:pay = action.payload;
-        const left:string[] = state.andavtages.slice(0,idx);
-        const right:string[] = state.andavtages.slice(idx+1);
-        state.andavtages = [...left,text,...right];
+        state.advantages = state.advantages.map(
+        (item:string,i:number)=>i == idx ? text : item);
         },
       addItem:(state:inintial,_:PayloadAction<undefined>):void => {
-          state.andavtages = [...state.andavtages,""];
+          state.advantages = [...state.advantages,""];
         },
       delItem:(state:inintial,action:action<number>):void => {
-          const items:string[] = state.andavtages
-          .filter((_,i:number)=>i!==action.payload);
-          state.andavtages = [...items];
+          const items:string[] = state.advantages
+          .filter((_:string,i:number)=>i!==action.payload);
+          state.advantages = [...items];
        }
    }
 });

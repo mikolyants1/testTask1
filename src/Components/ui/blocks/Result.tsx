@@ -2,6 +2,7 @@ import { memo } from "react"
 import styles from '../../style/res.module.css'
 import { useNavigate,NavigateFunction } from "react-router-dom"
 import { useFormContext } from "react-hook-form";
+import { useAction } from "../../store/store";
 
 interface props {
  res:boolean,
@@ -9,10 +10,13 @@ interface props {
 }
 function Result({close,res}:props):JSX.Element{
  const navigate:NavigateFunction = useNavigate();
+ const {setPhone,setMail} = useAction();
  const {reset} = useFormContext();
  const press = ():void => {
     if (res) {
         reset();
+        setMail("");
+        setPhone("");
         navigate("/");
     } else {
         close();
